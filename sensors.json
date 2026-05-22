@@ -1,0 +1,144 @@
+{
+  "connection": {
+    "port": "/dev/pts/0",
+    "baudRate": 4800,
+    "notes": "Development: updated automatically by make run with the pty slave path. Production: set to the real instrument port (e.g. /dev/ttyUSB0)."
+  },
+  "sensors": [
+    {
+      "id": "01",
+      "name": "Engine RPM",
+      "nmeaSentence": "IIRPM",
+      "nmeaField": 2,
+      "unit": "RPM",
+      "updateHz": 10,
+      "thresholds": {
+        "warningLow": 500.0,
+        "warningHigh": 1900.0,
+        "criticalLow": 200.0,
+        "criticalHigh": 2200.0
+      },
+      "notes": "Marine diesel rated at 1800 RPM. Source: ISO 8665."
+    },
+    {
+      "id": "02",
+      "name": "Coolant Temperature",
+      "nmeaSentence": "IIMTW",
+      "nmeaField": 0,
+      "unit": "\u00b0C",
+      "updateHz": 1,
+      "thresholds": {
+        "warningLow": 60.0,
+        "warningHigh": 92.0,
+        "criticalLow": 40.0,
+        "criticalHigh": 105.0
+      },
+      "notes": "Normal operating range 70-90C. Source: engine manufacturer datasheet."
+    },
+    {
+      "id": "03",
+      "name": "Fuel Pressure",
+      "nmeaSentence": "PSHIP",
+      "nmeaField": 1,
+      "unit": "bar",
+      "updateHz": 2,
+      "thresholds": {
+        "warningLow": 2.5,
+        "warningHigh": 8.5,
+        "criticalLow": 1.0,
+        "criticalHigh": 10.0
+      },
+      "notes": "Marine injection pressure 3-8 bar. Source: engine manufacturer datasheet."
+    },
+    {
+      "id": "04",
+      "name": "Hull Vibration",
+      "nmeaSentence": "PSHIP",
+      "nmeaField": 1,
+      "unit": "mm/s",
+      "updateHz": 5,
+      "thresholds": {
+        "warningLow": 0.0,
+        "warningHigh": 6.0,
+        "criticalLow": 0.0,
+        "criticalHigh": 12.0
+      },
+      "notes": "ISO 6954:2000 \u2014 comfort limit 6 mm/s, structural inspection above 12 mm/s."
+    },
+    {
+      "id": "05",
+      "name": "Wind Speed",
+      "nmeaSentence": "PSHIP",
+      "nmeaField": 1,
+      "unit": "m/s",
+      "updateHz": 2,
+      "thresholds": {
+        "warningLow": 0.0,
+        "warningHigh": 12.0,
+        "criticalLow": 0.0,
+        "criticalHigh": 18.0
+      },
+      "notes": "Beaufort 6 (12 m/s) = warning. Beaufort 8 (18 m/s) = critical."
+    },
+    {
+      "id": "06",
+      "name": "Wind Direction",
+      "nmeaSentence": "PSHIP",
+      "nmeaField": 1,
+      "unit": "deg",
+      "updateHz": 2,
+      "thresholds": {
+        "warningLow": 0.0,
+        "warningHigh": 360.0,
+        "criticalLow": 0.0,
+        "criticalHigh": 360.0
+      },
+      "notes": "Directional data only \u2014 no alarm thresholds."
+    },
+    {
+      "id": "07",
+      "name": "Water Depth",
+      "nmeaSentence": "IIDPT",
+      "nmeaField": 0,
+      "unit": "m",
+      "updateHz": 1,
+      "thresholds": {
+        "warningLow": 5.0,
+        "warningHigh": 1000.0,
+        "criticalLow": 2.0,
+        "criticalHigh": 1000.0
+      },
+      "notes": "Conservative values for a 1.8m draft vessel."
+    },
+    {
+      "id": "08",
+      "name": "Propeller Torque",
+      "nmeaSentence": "PSHIP",
+      "nmeaField": 1,
+      "unit": "%",
+      "updateHz": 5,
+      "thresholds": {
+        "warningLow": 0.0,
+        "warningHigh": 90.0,
+        "criticalLow": 0.0,
+        "criticalHigh": 100.0
+      },
+      "notes": "Expressed as % of rated torque. Source: propulsion system datasheet."
+    },
+    {
+      "id": "09",
+      "name": "Engine Oil Pressure",
+      "nmeaSentence": "PSHIP",
+      "nmeaField": 1,
+      "unit": "bar",
+      "updateHz": 2,
+      "thresholds": {
+        "warningLow": 1.5,
+        "warningHigh": 5.5,
+        "criticalLow": 0.8,
+        "criticalHigh": 7.0
+      },
+      "notes": "Engine oil pressure. Normal range 2-5 bar. Source: engine manufacturer datasheet. NOTE: no simulator data \u2014 channel will show no updates until a real instrument is connected."
+    }
+  ]
+}
