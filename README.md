@@ -1,8 +1,10 @@
 # nmea-monitor-cpp
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > Real-time sensor monitoring system for naval embedded platforms, built with **C++20** and **Qt6/QML**.
 
-![NMEA Monitor Dashboard](docs/screenshot.png)
+![NMEA Monitor Dashboard](docs/screenshot_2.png)
 
 ---
 
@@ -259,6 +261,8 @@ QML ListView
 ## The dashboard
 
 ![Dashboard](docs/screenshot.png)
+
+*Event log showing ACTIVE and CLOSED alerts with live duration counters.*
 
 ### Sensor Channels table
 
@@ -565,6 +569,12 @@ sudo usermod -a -G dialout $USER
 **Simulator pty path not found**
 
 If `make run` reports it cannot read the pty path, increase the startup delay in the Makefile (`sleep 0.3` → `sleep 0.8`) or check that `nmea_simulator` compiled correctly with `make build`.
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
