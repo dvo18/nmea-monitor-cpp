@@ -1,7 +1,5 @@
 # nmea-monitor-cpp
 
-[![CI](https://github.com/dvo18/nmea-monitor-cpp/actions/workflows/ci.yml/badge.svg)](https://github.com/dvo18/nmea-monitor-cpp/actions)
-
 > Real-time sensor monitoring system for naval embedded platforms, built with **C++20** and **Qt6/QML**.
 
 ![NMEA Monitor Dashboard](docs/screenshot.png)
@@ -31,7 +29,6 @@ This project demonstrates the direct transferability of aerospace software archi
 | Serial I/O | POSIX termios | Raw serial port access |
 | Simulation transport | POSIX pty (`posix_openpt`) | Virtual serial pair — no external dependencies |
 | Configuration | JSON | Instrument and threshold definition |
-| CI | GitHub Actions | Build + test on every push |
 | Platform | Linux / WSL | Primary target |
 
 ---
